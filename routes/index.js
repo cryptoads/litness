@@ -6,23 +6,25 @@ var config = require('../config.js');
 var T = new Twitter(config);
 
 var params = {
-  q: '#nodejs',
-  count: 10,
-  result_type: 'recent',
-  lang: 'en'
+    q: '#lit',
+    exclude:"replies",
+    exclude:"retweets",
+    geocode: "37.749,-84.3880,150mi",
+    count: 100
 }
 
-T.get('search/tweets', params, function(err, data, response) {
+
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  T.get('search/tweets', params, function(err, data, response) {
   if(!err){
-    // This is where the magic will happen
+   let tweets = data.statuses.map((el)=>{return(el.text)})
+   res.json(tweets);
   } else {
     console.log(err);
   }
 })
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
