@@ -9,7 +9,7 @@ var params = {
     q: '#lit',
     exclude:"replies",
     exclude:"retweets",
-    geocode: "37.749,-84.3880,150mi",
+    geocode: "37.749,-84.3880,50mi",
     count: 100
 }
 
