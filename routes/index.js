@@ -9,18 +9,18 @@ var params = {
     q: '#lit',
     exclude:"replies",
     exclude:"retweets",
-    geocode: "37.749,-84.3880,50mi",
-    count: 100
+    count: 500
 }
 
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/tweets', function(req, res, next) {
   T.get('search/tweets', params, function(err, data, response) {
   if(!err){
    let tweets = data.statuses.map((el)=>{return(el.text)})
-   res.json(tweets);
+   res.send(data.statuses)
+
   } else {
     console.log(err);
   }
