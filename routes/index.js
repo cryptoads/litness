@@ -9,7 +9,7 @@ var params = {
     q: '#lit',
     exclude:"replies",
     exclude:"retweets",
-    count: 500
+    count: 100
 }
 
 
