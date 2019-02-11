@@ -20,9 +20,9 @@ class Tweet extends Component {
 
 render() {
     let tweet = this.state.list.data.map((el, index)=>{ 
-        return (
-
-            <div className="lit" key={index}> 
+        let isItLit = el.text.toUpperCase();
+        let litFound = isItLit.indexOf('#LIT');
+        return (isItLit.includes("#LIT") ?     <div className="lit" key={index}> 
                 <div className="name">
                 <img className="profileImg" src={el.user.profile_image_url} />
                     <p>{el.user.name}</p>
@@ -30,10 +30,15 @@ render() {
                     
                 </div>
                 <div className="tweetText">
-                    {el.text}   
+                    {el.text.slice(0, litFound)}
+                    <span className="litLoud">{el.text.slice(litFound, litFound + 4)} </span>  
+                    {el.text.slice(litFound + 4, isItLit.length)} 
                     
                 </div>
-            </div>)
+            </div> : 
+
+            console.log('not lit')
+            )
     })
 
     return(

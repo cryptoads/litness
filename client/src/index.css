@@ -63,3 +63,31 @@ code {
     margin-right: 10px;
 }
 
+.litLoud {
+
+    -webkit-animation: pulse linear .5s infinite;
+    animation: pulse linear .5s infinite;
+}
+
+@-webkit-keyframes pulse {
+    0% { font-size:20px;
+        color: red;
+     } 
+    50% { font-size:25px;
+        color: green;
+     } 
+    100% { font-size:20px;
+        color: blue;
+     }
+}
+@keyframes pulse {
+    0% { font-size:20px;
+        color: red;
+     } 
+    50% { font-size:25px;
+        color: green;
+     } 
+    100% { font-size:20px;
+        color: blue;
+     }
+}
