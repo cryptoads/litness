@@ -13,9 +13,27 @@ var params = {
 }
 
 
+router.get('/tweet/:value', function(req, res, next) {
+ let searchDetails ={
+    q: req.params.value,
+    exclude:"replies",
+    exclude:"retweets",
+    count: 100
+}
+  T.get('search/tweets', searchDetails, function(err, data, response) {
+  if(!err){
+   let tweets = data.statuses.map((el)=>{return(el.text)})
+   res.send(data.statuses)
+
+  } else {
+    console.log(err);
+  }
+})
+});
 
 /* GET home page. */
-router.get('/tweets', function(req, res, next) {
+router.get('/tweets/', function(req, res, next) {
+
   T.get('search/tweets', params, function(err, data, response) {
   if(!err){
    let tweets = data.statuses.map((el)=>{return(el.text)})
@@ -26,5 +44,8 @@ router.get('/tweets', function(req, res, next) {
   }
 })
 });
+
+
+
 
 module.exports = router;
