@@ -16,6 +16,7 @@ code {
     margin-bottom: 25px;
 }
 
+
 .lit {
     margin: auto;
     background-color: lightgray;
@@ -30,12 +31,15 @@ code {
 
 .container {
     background: darkgray;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+   
+    
 }
 
 
+.linkText {
+  display: block;
+  text-align: left;
+}
 
 .name {
     margin-top: 5px;
@@ -43,10 +47,10 @@ code {
     margin-left: 5px;
     text-align: left;
     word-wrap: break-word;
-    line-height: .5em;
-    display: inline-flex;
     font-size: .5em;
-    width: 20%;
+    width: -webkit-fill-available;
+    max-width: 15%;
+
 }
 
 .profileImg {
@@ -55,12 +59,10 @@ code {
 }
 
 .tweetText{
-    word-wrap: normal;
-     font-size: .8em;
+
+    font-size: .8em;
     text-align: left;
-    width: 80%;
-    display: inline;
-    margin-right: 10px;
+    min-width: 80%;
 }
 
 .litLoud {

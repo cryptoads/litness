@@ -35,6 +35,7 @@ render() {
                     {el.text.slice(litFound + 4, isItLit.length)} 
                     
                 </div>
+
             </div> : 
 
             console.log('not lit')
@@ -44,6 +45,7 @@ render() {
     return(
 
     <div className="container">{tweet}</div>
+    
 )
 
 };
